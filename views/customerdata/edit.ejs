@@ -1,0 +1,35 @@
+<%- include ../layouts/header.ejs %>
+<div class="page-data">
+    <form method="post" action="/customerdata/edit/<%=data[0].id%>">
+        <table cellpadding="11">
+            <tr>
+                <td class="label">Name</td>
+                <td><input type="text" name="name" value="<%=data[0].name%>" /></td>
+            </tr>
+            <tr>
+                <td class="label">Text</td>
+                <td><input type="text" value="<%=data[0].text%>" name="text" /></td>
+            </tr>
+            <tr>
+                <td class="label">Video</td>
+                <td><input type="text" value="<%=data[0].video%>" name="video" /></td>
+            </tr>
+            <tr>
+                <td class="label">Image</td>
+                <td><input type="text" name="image" value="<%=data[0].image%>" /></td>
+            </tr>
+            <tr>
+                <td class="label">Website</td>
+                <td><input type="text" name="explanation" value="<%=data[0].explanation%>" /></td>
+            </tr>
+            <tr>
+                <td class="label"></td>
+                <td>
+                    <button type="submit">Save</button>
+                    <button type="button" onClick="cancelAddData()">Cancel</button>
+                </td>
+            </tr>
+        </table>
+    </form> 
+</div>
+<%- include ../layouts/footer.ejs %>

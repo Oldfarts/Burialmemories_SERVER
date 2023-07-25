@@ -1,0 +1,56 @@
+<%- include ../layouts/header.ejs %>
+<div class="page-data">
+    <form method="post" action="/customer/add">
+        <table cellpadding="11">
+            <tr>
+                <td class="label">Name</td>
+                <td><input type="text" name="name" required /></td>
+            </tr>
+            <tr>
+                <td class="label">Address</td>
+                <td><textarea name="address" required cols="30" rows="5"></textarea></td>
+            </tr>
+            <tr>
+                <td class="label">Email</td>
+                <td><input type="text" name="email" required /></td>
+            </tr>
+            <tr>
+                <td class="label">Phone</td>
+                <td><input type="text" name="phone" required /></td>
+            </tr>
+            <tr>
+                <td class="label">Website</td>
+                <td><input type="text" name="website" required /></td>
+            </tr>
+            <tr>
+                <td class="label">Birthdate</td>
+                <td><input type="text" name="birthdate" required /></td>
+            </tr>
+            <tr>
+                <td class="label">Deathdate</td>
+                <td><input type="text" name="deathdate" /></td>
+            </tr>
+            <tr>
+                <td class="label">State</td>
+                <td><input type="text" name="state" required /></td>
+            </tr>
+            <tr>
+                <td class="label">Country</td>
+                <td><input type="text" name="country" required /></td>
+            </tr>
+            <tr>
+                <td class="label">Socialnumber</td>
+                <td><input type="text" name="socialnumber" required /></td>
+            </tr>
+
+            <tr>
+                <td class="label"></td>
+                <td>
+                    <button type="submit">Save</button>
+                    <button type="button" onClick="cancelAddCustomer()">Cancel</button>
+                </td>
+            </tr>
+        </table>
+    </form>
+</div>
+<%- include ../layouts/footer.ejs %>

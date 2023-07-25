@@ -1,0 +1,78 @@
+<!DOCTYPE HTML> 
+<html> 
+  
+<head> 
+    <title> 
+       Customerdata page
+    </title> 
+        <script type="text/javascript">
+        function decodeImage() {
+            var input2 = document.getElementById ("image")getElementsByTagName("data");
+            let buffer2=Uint8Array.from(atob(input2), c => c.charCodeAt(0));
+            let blob2=new Blob([buffer], { type: "image/jpg" });
+            let url2=URL.createObjectURL(blob);
+            let img2=document.createElement("img");
+            img.src=url2;
+            document.body.appendChild(img);
+         }
+        </script>
+
+        <script type="text/javascript">
+        function decodeVideo() {
+            var input = document.getElementById ("video").getElementsByTagName("data");
+            let buffer=Uint8Array.from(atob(input), c => c.charCodeAt(0));
+            let blob=new Blob([buffer], { type: "image/jpg" });
+            let url=URL.createObjectURL(blob);
+            let img=document.createElement("img");
+            img.src=url;
+            document.body.appendChild(img);
+         }
+        </script>
+</head> 
+<body>
+<%- include ../layouts/header.ejs %>
+<div class="page-data">
+    <div class="data-btn">
+        <button onClick="addData();">+ Add</button>
+    </div>
+    <div class="data-table">
+        <table>
+            <tr>
+                <th width="50px">No</th>
+                <th>Name</th>
+                <th>Text</th>
+                <th>Video</th>
+                <th>Image</th>
+                <th>Explanation</th>
+                <th width="120px">Action</th>
+            </tr>
+
+            <% if(data.length){
+
+            for(var i = 0;i < data.length;i++) { %>
+
+            <tr>
+                <td><%=(i+1)%></td>
+                <td><%=data[i].name%></td>
+                <td><%=data[i].text%></td>
+                <td><video><video class="data[i].video.data"><source type="data:image/jpg;base64,data[i].video.data"></video></td>
+                <td><img class="data[i].image.data"><img src="data:image/jpg;base64,data[i].image.data" width="50" height="50" alt="base64image"/></td>
+                <td><%=data[i].explanation%></td>
+                <td>
+                    <a class="a-inside edit" href="../customerdata/edit/<%=data[i].id%>">Edit</a>
+                    <a class="a-inside delete" href="../customerdata/delete/<%=data[i].id%>">Delete</a>
+                </td>
+            </tr>
+            <% }
+            }else{ %>
+            <tr>
+                <td colspan="7">No Data</td>
+            </tr>
+            <% } %>
+        </table>
+    </div>
+</div>
+
+<%- include ../layouts/footer.ejs %>
+<body>
+</html>

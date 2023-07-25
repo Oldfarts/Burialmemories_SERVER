@@ -1,0 +1,50 @@
+<%- include ../layouts/header.ejs %>
+<div class="page-data">
+    <div class="data-table">
+        <table>
+            <tr>
+                <th width="50px">No</th>
+                <th>Name</th>
+                <th>Address</th>
+                <th>Phone</th>
+                <th>Email</th>
+                <th>Website</th>
+                <th>Birthdate</th>
+                <th>Deathdate</th>
+                <th>State</th>
+                <th>Country</th>
+                <th>Socialnumber</th>
+
+                <th width="120px">Action</th>
+            </tr>
+
+            <% if(data.length){
+
+            for(var i = 0;i < data.length;i++) { %>
+
+            <tr>
+                <td><%=(i+1)%></td>
+                <td><%=data[i].name%></td>
+                <td><%=data[i].address%></td>
+                <td><%=data[i].phone%></td>
+                <td><%=data[i].email%></td>
+                <td><%=data[i].website%></td>
+                <td><%=data[i].birthdate%></td>
+                <td><%=data[i].birthdate%></td>
+                <td><%=data[i].state%></td>
+                <td><%=data[i].country%></td>
+                <td><%=data[i].socialnumber%></td>
+                <td>
+                </td>
+            </tr>
+            <% }
+            }else{ %>
+            <tr>
+                <td colspan="12">No user</td>
+            </tr>
+            <% } %>
+        </table>
+    </div>
+</div>
+
+<%- include ../layouts/footer.ejs %>

@@ -1,0 +1,64 @@
+<html>
+<head>
+    <style>
+        body {
+            background-image: url("frontpage.jpg");
+            background-color: #cccccc;
+        }
+    </style>
+    <title>Burialmemories</title>
+</head>
+<body>
+    <div class="page-data">
+        <form action="/upload" enctype="multipart/form-data" method="post">
+            <table cellpadding="11">
+                <tr>
+                </tr>
+
+                <tr>
+                    <td class="label">Image</td>
+                    <td>
+                        <form action="/upload" enctype="multipart/form-data" method="post">
+                            <input type="file" name="file" />
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="label">Video</td>
+                    <td>
+                        <form action="/upload" enctype="multipart/form-data" method="post">
+                            <input type="file" name="file" />
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="label">Name</td>
+                    <td>
+                        <form action="/upload" enctype="multipart/form-data" method="post">
+                            <input type="text" name="name" />
+                    </td>
+                </tr>
+                <tr>
+                    <td class="label">Text</td>
+                    <td><form action="/upload" enctype="multipart/form-data" method="post">
+                        <input type="text" name="text" />
+                    </td>
+                </tr>
+                <tr>
+                    <td class="label">Explanation</td>
+                    <td>
+                        <form action="/upload" enctype="multipart/form-data" method="post">
+                            <input type="text" name="explanation" />
+                    </td>
+                </tr>
+                <tr>
+                    <td class="label"></td>
+                    <td>
+                        <button><input type="submit" /></button>
+                    </td>
+                </tr>
+            </table>
+</div>
+    </form>
+</body>
+</html>
