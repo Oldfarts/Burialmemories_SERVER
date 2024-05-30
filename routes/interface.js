@@ -10,11 +10,13 @@ const client = new Client({
 
 client.connect();
 */
+
+// changethis = your database password
 const client = new Client({
     user: 'testuser',
     host: '127.0.0.1',
     database: 'mvc_app',
-    password: 'poop',
+    password: 'changethis',
     port: 5432,
 })
 
