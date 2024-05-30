@@ -20,7 +20,7 @@ The application will run at: 192.168.1.209:4000. If you need different IP addres
 
 5. To test the functionality:
 - a open web browser from page http://192.168.1.209:4000
-- b Add customerdata (name, text, image and shot video (max <2mb)
+- b Add customerdata (name, text, explanation, image and video (max <2mb)
 - c Git clone client project
 - d Install android studio
 - e Compile the application
