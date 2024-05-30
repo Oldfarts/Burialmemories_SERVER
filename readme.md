@@ -6,10 +6,11 @@ DOWNLOAD PROJECT & INSTALL
 "git clone https://github.com/Oldfarts/Burialmemories_SERVER"
 
 2. Install PostGreSQL database and create db and set up the table (db schema located at folder .\config\db\schema.sql)
-2.1	Edit the files in server project:
+2.1	Edit the files in server project and change these files password to be same (i was lazy :) ):
 - config.js -> change the database password
 - customerdata.js -> change the database password
 - interface.js  -> change the database password
+
 
 3. Open up Terminal or Command line
 Navigate to the directory where the project was cloned to
