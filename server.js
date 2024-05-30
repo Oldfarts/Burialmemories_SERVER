@@ -14,7 +14,7 @@ const server = http.createServer(app);
 /*
 * START SERVER
 */
-server.listen(4000,'192.168.1.251');
+server.listen(4000,'192.168.1.209');
 // CREATE HTTP SERVER USING APP and setup IP Adderss and port
 const port = /*process.env.PORT ||*/ '4000'; // INITIALIZE DEFAULT PORT OR PORT FROM ENVIRONMENT VARIABLE
 const logger = require('morgan'); // TERMINAL LOGGER: SHOWS THE ROUTE AND STATUS CODE FOR EVERY REQUEST
@@ -144,7 +144,7 @@ app.post('/upload', function (req, res) {
 // LISTEN ON SPECIFIED PORT
 //server.listen(port);
 // LOG WHICH PORT THE SERVER IS RUNNING ON
-console.log('Server listening on:' + '192.168.1.251' + ' on Port:' + port);
+console.log('Server listening localhost address: ' + 'on Port:' + port);
 
 // INDEX.HTML - start page
 const router = express.Router();
