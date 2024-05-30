@@ -13,7 +13,9 @@ const pgp = require('pg-promise')(options);
 
 // SET UP THE CONNECTION STRING FOR THE DATABASE
 //const connectionString = process.env.DATABASE_URL;
-var connectionString = "Burialmemory://testuser:poop@127.0.0.1:5432/mvc_app";
+
+// changethis = your database password
+var connectionString = "Burialmemory://testuser:changethis@127.0.0.1:5432/mvc_app";
 const db = pgp(connectionString);
 
 module.exports = db;
