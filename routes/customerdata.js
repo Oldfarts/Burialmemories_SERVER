@@ -2,16 +2,8 @@
 
 const { Client } = require('pg');
 const fs = require('fs');
-/*
-var connectionString = "PostgreSQL15://testuser:poop@127.0.0.1:5432/mvc_app";
-
-
-const client = new Client({
-    connectionString: connectionString
-});
 
 // changethis = your database password
-client.connect();*/
 const client = new Client({
     user: 'testuser',
     host: '127.0.0.1',
