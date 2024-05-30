@@ -19,11 +19,11 @@ Run this command: npm -i install
 The application will run at: 192.168.1.209:4000. If you need different IP address or port please change the server.js - "server.listen(4000,'192.168.1.209');"
 
 5. To test the functionality:
-a open web browser from page http://192.168.1.209:4000
-b Add customerdata (name, text, image and shot video (max <2mb)
-c Git clone client project
-d Install android studio
-e Compile the application
-f Install the application to mobile phone or use it via emulator
-g Start the client app and scan the name from some QR generation page (eg. Jani Ärväs - the program has address already)
-h Verify the results (see the data what you have entered into database)
+- a open web browser from page http://192.168.1.209:4000
+- b Add customerdata (name, text, image and shot video (max <2mb)
+- c Git clone client project
+- d Install android studio
+- e Compile the application
+- f Install the application to mobile phone or use it via emulator
+- g Start the client app and scan the name from some QR generation page (eg. Jani Ärväs - the program has address already)
+- h Verify the results (see the data what you have entered into database)
