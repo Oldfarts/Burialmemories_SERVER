@@ -11,7 +11,7 @@ https://github.com/Oldfarts/Burialmemories_SERVER
 - customerdata.js -> change the database password
 - interface.js  -> change the database password
 
-3. Isntall latest node
+3. Install latest node
 
 4. Open up Terminal or Command line
 Navigate to the directory where the project was cloned to
