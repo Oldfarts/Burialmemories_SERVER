@@ -56,18 +56,6 @@ exports.upload = function (req, res) {
     });
 };
 
-exports.uploadSingleImg = function (request, response) {
-    console.log('Got body:', request.body);
-    var cols = [req.body.name, req.body.text, req.body.video, req.body.image, req.body.explanation];
-
-    client.query('INSERT INTO public.customerdata (name, text, video, image, explanation) VALUES($1, $2, $3, $4, $5) RETURNING * ', cols, function (err, results) {
-        if (err) {
-            console.log("Error Saving : %s ", err);
-        }
-        res.redirect('/customerdata');
-    });
-
-};
 
 exports.save = function (req, res) {   
     var cols = [req.body.name, req.body.text, req.body.video, req.body.image, req.body.explanation];
@@ -113,88 +101,3 @@ exports.save = function (req, res) {
     });
 };
 
-exports.edit = function (req, res) {
-
-    var id = req.params.id;
-
-    client.query('SELECT * FROM public.customerdata WHERE id=$1', [id], function (err, result) {
-        if (err) {
-            console.log(err);
-            res.status(400).send(err);
-        }
-        res.render('customerdata/edit', { title: "Customerdata", data: result.rows });
-    });
-
-};
-
-exports.update = function (req, res) {
-
-    var cols = [req.params.name, req.params.text, req.params.video, req.params.image, req.params.explanation, req.params.id];
-
-    client.query('UPDATE public.customerdata SET name=$1, text=$2, video=$3, image=$4, explanation=$5 WHERE id = $6', cols, function (err) {
-        if (err) {
-            console.log("Error Updating : %s ", err);
-        }
-        res.redirect('/customerdata');
-    });
-
-}; exports.delete = function (req, res) {
-
-    var id = req.params.id;
-
-    client.query('DELETE FROM public.customerdata WHERE id=$1', [id], function (err) {
-        if (err) {
-            console.log("Error deleting : %s ", err);
-        }
-        res.redirect('/customerdata');
-    });
-
-};
-
-exports.list = function (request, response) {
-
-    client.query('SELECT * FROM public.customerdata', function (err, result) {
-        if (err) {
-            console.log("Error retrieving: %", err);
-        }
-        else {
-            let data = result.rows;
-            var stringValue;
-            //console.log('Get data from results:', data);
-            let parsedObj = {}
-            try {
-                parsedObj = JSON.stringify(data);
-                // console.log('Parsed object:', parsedObj);
-            } catch (e) {
-                console.log("Cannot parse because data is not is proper json format")
-            }
-            stringValue = JSON.parse(parsedObj);
-            console.log('Get image of whole data:', stringValue);
-
-            // Create a buffer from the string
-            let bufferObj = Buffer.from(stringValue[0]['image']['data'], "base64");
-
-            // Encode the Buffer as a utf8 string
-            let decodedImageString = bufferObj.toString("utf8");
-            fs.writeFile("./public/images/output.jpg", decodedImageString, 'base64', function (err, data) {
-                if (err) {
-                    console.log('Error writing the image.', err);
-                }
-                console.log('Success on writing the image.', data);
-            });
-
-            // Create a buffer from the string
-            let bufferObj2 = Buffer.from(stringValue[0]['video']['data'], "base64");
-
-            // Encode the Buffer as a utf8 string
-            let decodedVideoString = bufferObj2.toString("utf8");
-            fs.writeFile("./public/videos/output.mp4", decodedVideoString, 'base64', function (err, data) {
-                if (err) {
-                    console.log('Error writing the video.', err);
-                }
-                console.log('Success on writing the video.', data);
-            });
-            response.render('customerdata/list', { title: "Customerdata", data: result.rows });
-        }
-    });
-};

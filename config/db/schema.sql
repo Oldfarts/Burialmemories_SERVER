@@ -1,3 +1,5 @@
+/* replace PASSWORD 'xxxxxx' with your own password */
+
 CREATE ROLE testuser WITH
 	LOGIN
 	SUPERUSER
@@ -6,8 +8,8 @@ CREATE ROLE testuser WITH
 	INHERIT
 	NOREPLICATION
 	CONNECTION LIMIT -1
-	PASSWORD 'xxxxxx';
-    
+	PASSWORD 'xxxxxx';    
+
 DROP DATABASE IF EXISTS mvc_app;
 CREATE DATABASE mvc_app;
 

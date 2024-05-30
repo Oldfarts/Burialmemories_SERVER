@@ -55,37 +55,9 @@ var customerdata = require('./routes/customerdata'); // CUSTOMERDATA ROUTES
 //app.get('/customerdata', customerdata.list);
 app.get('/customerdata/add', customerdata.add);//File upload
 app.post('/customerdata/add', customerdata.save);
-app.get('/customerdata/delete/:id', customerdata.delete);
-app.get('/customerdata/edit/:id', customerdata.edit);
-app.post('/customerdata/edit/:id', customerdata.update);
-
-
-// newline CUSTOMER routes
-var customer = require('./routes/customer'); // CUSTOMER ROUTES
-app.get('/customer', customer.list);
-app.get('/customer/add', customer.add);
-app.post('/customer/add', customer.save);
-app.post('customerdata/upload', customer.save);
-app.get('/customer/delete/:id', customer.delete);
-app.get('/customer/edit/:id', customer.edit);
-app.post('/customer/edit/:id', customer.update);
-
-// newline CUSTOMERS routes
-var customers = require('./routes/customers'); // CUSTOMERS ROUTES
-//app.get('/', routes.index);
-app.get('/customers', customers.list);
-app.get('/customers/add', customers.add);
-app.post('/customers/add', customers.save);
-app.get('/customers/delete/:id', customers.delete);
-app.get('/customers/edit/:id', customers.edit);
-app.post('/customers/edit/:id', customers.update);
-
 
 // newline INTERFACE routes
 var interface = require('./routes/interface'); // INTERFACE ROUTES
-//app.post('/interface', interface.getCustomerInfo);
-//app.post('/interface', interface.getCustomerImage);
-//app.post('/interface', interface.getCustomerVideo);
 app.post('/interface', interface.getCustomerAllData);
 
 // TEST -------------------TEST
@@ -133,13 +105,10 @@ app.post('/upload', function (req, res) {
     res.redirect('/customerdata')
 
 });
-
-
-
-
 // TEST -------------------TEST
 // TEST -------------------TEST
 // TEST -------------------TEST
+
 
 // LISTEN ON SPECIFIED PORT
 //server.listen(port);
@@ -153,25 +122,14 @@ router.get('/', function (req, res) {
     //__dirname : It will resolve to your project folder.
 });
 
-// Initialize routers here
-//var routers = require('./routes/customerdata');
-// app.use('/', routers.root);
-//app.use('customerdata', routers.list);
-
-//module.exports = upload;
-module.exports = storage;
-
-//endpoint android & skripsi
-//app.use('/customerdata/upload', customerdata);
-
 // ERROR HANDLER
 app.use((err, req, res, next) => {
   console.log(err);
   res.status(err.status || 500).send(err.stack);
 });
-//app.use('/customer/add', customer.postImage);
 
 
 // EXPORT APP
+module.exports = storage;
 module.exports = app;
 
