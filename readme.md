@@ -3,7 +3,7 @@ This is demo project about the burial memories.
 
 DOWNLOAD PROJECT & INSTALL
 1. Git clone this project 
-https://github.com/Oldfarts/Burialmemories_SERVER
+"git clone https://github.com/Oldfarts/Burialmemories_SERVER"
 
 2. Install PostGreSQL database and create db and set up the table (db schema located at folder .\config\db\schema.sql)
 2.1	Edit the files in server project:
