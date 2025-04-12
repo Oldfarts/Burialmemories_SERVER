@@ -1,4 +1,4 @@
-MVC Design Patern (using Node.js with Express.js and a PostgreSQL database)
+MVC Design Patern (using Node.js with Express.js and a MySQL database)
 This is demo project about the burial memories.
 
 DOWNLOAD PROJECT & INSTALL
